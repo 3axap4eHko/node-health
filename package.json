@@ -1,0 +1,21 @@
+{
+  "name": "node-health",
+  "version": "1.0.0",
+  "description": "Node JS process health monitor",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3axap4eHko/node-health.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3axap4eHko/node-health/issues"
+  },
+  "homepage": "https://github.com/3axap4eHko/node-health#readme"
+}
