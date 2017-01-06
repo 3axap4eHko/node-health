@@ -1,9 +1,8 @@
 {
   "name": "node-health",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node JS process health monitor",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,8 +11,8 @@
     "url": "git+https://github.com/3axap4eHko/node-health.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ivan Zakharchanka <3axap4eHko@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/3axap4eHko/node-health/issues"
   },

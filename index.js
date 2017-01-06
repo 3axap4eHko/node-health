@@ -7,51 +7,17 @@ const Http = require('http');
 const ZLib = require('zlib');
 
 
-const keyExpr = /^-{1,2}(.*)$/;
 const faviconExpr = /favicon.ico/;
-const noKeyArgs = Symbol('Arguments without keys');
-const lastKeyArg = Symbol('Last argument key');
+const {env} = process;
 
-const argsMap = {
-  '-p': 'port',
-  '-h': 'host',
-  '-l': 'log',
-  '-t': 'tick',
-  '-s': 'collectionSize'
+
+const options = {
+  port: env.HEALTH_PORT || 5113,
+  hostname: env.HEALTH_HOST || '127.0.0.1',
+  log: env.HEALTH_LOG || Path.join(Os.tmpdir(), `node-health-${Date.now()}.log`),
+  tick: env.HEALTH_TICK || 3,
+  collectionSize: env.HEALTH_SIZE || 1000
 };
-
-const defaultOptions = {
-  [noKeyArgs]: [],
-  [lastKeyArg]: null,
-  port: 5113,
-  hostname: '127.0.0.1',
-  log: Path.join(Os.tmpdir(), `node-health-${Date.now()}.log`),
-  tick: 3,
-  collectionSize: 1000
-};
-
-const options = process.argv.slice(2).reduce((result, arg) => {
-
-  const {[lastKeyArg]: lastKey} = result;
-
-  if (lastKey === null && keyExpr.test(arg)) {
-    result[lastKeyArg] = arg;
-  } else if (lastKey !== null) {
-
-    if (argsMap[lastKey]) {
-      const optionsKey = argsMap[lastKey];
-      result[optionsKey] = arg;
-    } else {
-      result[lastKey] = arg;
-    }
-
-    result[lastKeyArg] = null;
-  } else {
-    result[noKeyArgs].push(arg);
-  }
-
-  return result;
-}, defaultOptions);
 
 const {hostname, port, log, tick, collectionSize} = options;
 
