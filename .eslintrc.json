@@ -1,0 +1,52 @@
+{
+  "extends": [
+    "eslint:recommended"
+  ],
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "no-debugger": 2,
+    "no-console": 0,
+    "no-underscore-dangle": 0,
+    "no-use-before-define": 2,
+    "no-undefined": 2,
+    "no-else-return": 2,
+    "no-unmodified-loop-condition": 2,
+    "no-multi-spaces": 2,
+    "no-eval": 2,
+    "no-labels": 2,
+    "no-var": 2,
+    "no-class-assign": 2,
+    "no-const-assign": 2,
+    "no-dupe-class-members": 2,
+    "no-duplicate-imports": 2,
+    "no-restricted-imports": [2, "sys"],
+    "no-this-before-super": 2,
+    "no-invalid-regexp": 2,
+    "no-unsafe-negation": 2,
+
+    "prefer-const": 2,
+    "prefer-rest-params": 2,
+    "prefer-template": 2,
+
+    "array-callback-return": 2,
+    "complexity": [2, 5],
+    "arrow-spacing": ["error", { "before": true, "after": true }],
+    "object-shorthand": 2,
+    "dot-notation": 2,
+    "symbol-description": 2,
+    "curly": 2,
+    "new-cap": 0,
+    "eol-last": 0,
+    "quotes": [2, "single"],
+    "semi": [2, "always"],
+    "template-curly-spacing": [2, "never"],
+    "indent": [2, 2, { "SwitchCase": 1 }]
+  }
+}
